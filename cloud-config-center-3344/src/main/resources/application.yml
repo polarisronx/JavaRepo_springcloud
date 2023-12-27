@@ -1,0 +1,32 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/polarisronx/JavaRepo.git
+          ####搜索目录
+          search-paths:
+            - Cloud/springConfig/config
+          ####读取分支
+          default-label: main
+  #rabbitmq相关配置 15672是Web管理界面的端口；5672是MQ访问的端口
+  rabbitmq:
+    host: 192.168.108.128
+    port: 5672
+    username: admin
+    password: 123456
+# 服务注册进Eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka/
+##rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
