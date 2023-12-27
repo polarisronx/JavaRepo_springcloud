@@ -15,11 +15,11 @@ spring:
                 port: 5672
                 username: admin
                 password: 123456
-      bindings: # 服务的整合处理
-        output: # 这个名字是一个通道的名称
+      bindings: # 定义绑定操作
+        output:
           destination: streamExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
-          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+#          binder: defaultRabbit # 设置要绑定哪个binder，默认是defaultRabbit
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
