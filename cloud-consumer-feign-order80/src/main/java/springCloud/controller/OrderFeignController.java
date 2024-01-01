@@ -32,5 +32,12 @@ public class OrderFeignController {
         // Feign不支持使用@RequestParam
         return paymentFeignService.paymentFeignTimeout();
     }
+    // ====================> zipkin+sleuth 链路调用测试
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        return paymentFeignService.paymentZipkin();
+    }
+
 }
 

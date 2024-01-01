@@ -65,6 +65,14 @@ public class paymentController {
         }
         return this.discoveryClient;
     }
+
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin()
+    {
+        return "hi ,I'm payment zipkin server fall back，welcome to polaris，O(∩_∩)O哈哈~";
+    }
+
+
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB (){
         return serverPort;

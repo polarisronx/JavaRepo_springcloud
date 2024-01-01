@@ -13,6 +13,13 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
+
+    <!--包含了sleuth+zipkin  调用链路监控-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+
     <!--eureka client-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
