@@ -1,0 +1,19 @@
+# nacos 配置
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 客户端找到服务注册中心的地址
+      config:
+        server-addr: localhost:8848 # 客户端找到配置中心的地址
+        file-extension: yaml # 指定读取的文件扩展名，目前只支持yaml和properties
+        group: TEST_GROUP
+        namespace: 597a6235-8909-4afb-a084-902062b3505a
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+#  读取的文件的文件名 dataId 的格式公式： 服务名+当前的开发环境（application中配置）+扩展名 例如：nacos-config-client-dev.yaml
