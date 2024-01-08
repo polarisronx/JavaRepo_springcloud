@@ -8,6 +8,11 @@
   </parent>
   <artifactId>cloudalibaba-sentinel-service8401</artifactId>
   <dependencies>
+    <!--SpringCloud ailibaba sentinel-datasource-nacos 规则持久化 -->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-datasource-nacos</artifactId>
+    </dependency>
     <!--SpringCloud ailibaba nacos -->
     <dependency>
       <groupId>com.alibaba.cloud</groupId>
